@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient()
+// Simple in-memory storage for check-ins
+let checkInsStore: any[] = []
 
 // POST create check-in
 export async function POST(request: NextRequest) {
@@ -9,28 +9,15 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { goalId, value, notes } = body
 
-    // Create check-in
-    const checkIn = await prisma.checkIn.create({
-      data: {
-        goalId,
-        value: parseFloat(value),
-        notes,
-      },
-    })
-
-    // Update goal current value
-    const goal = await prisma.goal.findUnique({
-      where: { id: goalId },
-      include: { checkIns: true },
-    })
-
-    if (goal) {
-      const totalValue = goal.checkIns.reduce((sum, ci) => sum + ci.value, 0)
-      await prisma.goal.update({
-        where: { id: goalId },
-        data: { currentValue: totalValue },
-      })
+    const checkIn = {
+      id: Date.now().toString(),
+      goalId,
+      value: parseFloat(value) || 1,
+      notes: notes || '',
+      completedAt: new Date().toISOString()
     }
+
+    checkInsStore.push(checkIn)
 
     return NextResponse.json({ success: true, checkIn })
   } catch (error) {
@@ -54,10 +41,9 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    const checkIns = await prisma.checkIn.findMany({
-      where: { goalId },
-      orderBy: { completedAt: 'desc' },
-    })
+    const checkIns = checkInsStore
+      .filter(ci => ci.goalId === goalId)
+      .sort((a, b) => new Date(b.completedAt).getTime() - new Date(a.completedAt).getTime())
 
     return NextResponse.json({ success: true, checkIns })
   } catch (error) {
