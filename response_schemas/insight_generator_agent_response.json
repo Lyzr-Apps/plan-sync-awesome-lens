@@ -1,0 +1,138 @@
+{
+  "agent_name": "Insight Generator Agent",
+  "agent_id": "698834e2f92870f1ee0acc69",
+  "agent_purpose": "Creates personalized insights and visualization recommendations about progress, patterns, and achievements with positive framing to maintain motivation",
+  "description": "Personalized insights and visualizations that celebrate progress and motivate through positive framing",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "key_insights": [
+        {
+          "insight_title": "string",
+          "insight_message": "string",
+          "category": "string"
+        }
+      ],
+      "achievements_highlighted": [
+        "string"
+      ],
+      "visualization_suggestions": [
+        {
+          "viz_type": "string",
+          "data_focus": "string",
+          "motivational_angle": "string"
+        }
+      ],
+      "progress_summary": "string",
+      "encouragement_message": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "key_insights": [
+        {
+          "insight_title": "Career Task Triumph",
+          "insight_message": "You've achieved an impressive 85% completion rate in your career tasks! This reflects your strong focus and dedication towards your professional growth, setting a fantastic example for prioritizing your career goals.",
+          "category": "achievement"
+        },
+        {
+          "insight_title": "Steady Progress in Exercise",
+          "insight_message": "With a 60% completion rate in your exercise routine, you're building a consistent habit that promotes your health and well-being. This progress is vital, as every workout contributes to a healthier and fitter you.",
+          "category": "progress"
+        },
+        {
+          "insight_title": "Savings Milestone",
+          "insight_message": "You've reached 45% of your savings goal! This is a commendable step towards financial security. It shows your commitment to setting aside resources for future needs, which is a big win for your financial planning.",
+          "category": "achievement"
+        },
+        {
+          "insight_title": "Opportunity in Personal Reading",
+          "insight_message": "At a 30% completion rate in personal reading, there's room for growth. This can be seen as an opportunity to incorporate more reading into your routine. Every page read enriches your knowledge and understanding.",
+          "category": "growth"
+        }
+      ],
+      "achievements_highlighted": [
+        "85% completion in career tasks",
+        "60% completion in exercise",
+        "45% completion towards savings goal"
+      ],
+      "visualization_suggestions": [
+        {
+          "viz_type": "bar chart",
+          "data_focus": "completion rates for all goals",
+          "motivational_angle": "This visualization will clearly display your dedication in each area, highlighting strengths and areas to nurture further."
+        },
+        {
+          "viz_type": "progress tracker",
+          "data_focus": "weekly progress in exercise and reading",
+          "motivational_angle": "Visualizing progress over time can make your achievements feel more tangible and motivate you to stay consistent with your routines!"
+        }
+      ],
+      "progress_summary": "Your journey reflects a balanced approach to various aspects of life. You've made remarkable strides in your career and health, while your savings effort shows your forward-thinking mindset. Each effort, no matter the percentage, signifies your commitment to personal growth.",
+      "encouragement_message": "Keep up the fantastic work! Remember, every small step contributes to your overall journey. Celebrate your achievements, learn from challenges, and continue pushing forward!"
+    },
+    "metadata": {
+      "agent_name": "Insight Generator Agent",
+      "timestamp": "2023-10-13T12:45:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-08T07:05:47.022714",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "key_insights": [
+        {
+          "insight_title": "Career Task Triumph",
+          "insight_message": "You've achieved an impressive 85% completion rate in your career tasks! This reflects your strong focus and dedication towards your professional growth, setting a fantastic example for prioritizing your career goals.",
+          "category": "achievement"
+        },
+        {
+          "insight_title": "Steady Progress in Exercise",
+          "insight_message": "With a 60% completion rate in your exercise routine, you're building a consistent habit that promotes your health and well-being. This progress is vital, as every workout contributes to a healthier and fitter you.",
+          "category": "progress"
+        },
+        {
+          "insight_title": "Savings Milestone",
+          "insight_message": "You've reached 45% of your savings goal! This is a commendable step towards financial security. It shows your commitment to setting aside resources for future needs, which is a big win for your financial planning.",
+          "category": "achievement"
+        },
+        {
+          "insight_title": "Opportunity in Personal Reading",
+          "insight_message": "At a 30% completion rate in personal reading, there's room for growth. This can be seen as an opportunity to incorporate more reading into your routine. Every page read enriches your knowledge and understanding.",
+          "category": "growth"
+        }
+      ],
+      "achievements_highlighted": [
+        "85% completion in career tasks",
+        "60% completion in exercise",
+        "45% completion towards savings goal"
+      ],
+      "visualization_suggestions": [
+        {
+          "viz_type": "bar chart",
+          "data_focus": "completion rates for all goals",
+          "motivational_angle": "This visualization will clearly display your dedication in each area, highlighting strengths and areas to nurture further."
+        },
+        {
+          "viz_type": "progress tracker",
+          "data_focus": "weekly progress in exercise and reading",
+          "motivational_angle": "Visualizing progress over time can make your achievements feel more tangible and motivate you to stay consistent with your routines!"
+        }
+      ],
+      "progress_summary": "Your journey reflects a balanced approach to various aspects of life. You've made remarkable strides in your career and health, while your savings effort shows your forward-thinking mindset. Each effort, no matter the percentage, signifies your commitment to personal growth.",
+      "encouragement_message": "Keep up the fantastic work! Remember, every small step contributes to your overall journey. Celebrate your achievements, learn from challenges, and continue pushing forward!"
+    },
+    "metadata": {
+      "agent_name": "Insight Generator Agent",
+      "timestamp": "2023-10-13T12:45:00Z"
+    }
+  },
+  "test_passed": true
+}

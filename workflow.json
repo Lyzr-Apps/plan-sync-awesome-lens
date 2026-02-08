@@ -1,0 +1,109 @@
+{
+  "workflow_name": "LifeFlow Adaptive Goal Planning Companion",
+  "description": "An adaptive goal planning companion that helps students manage goals across habits, finances, career, and personal development with supportive, shame-free coaching",
+  "version": "1.0.0",
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "User Query",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "life_coach_manager",
+      "type": "Agent",
+      "label": "Life Coach Manager",
+      "nodeCategory": "agent",
+      "agent_id": "69883505f92870f1ee0acc6b",
+      "config": {
+        "name": "Life Coach Manager",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.5,
+        "top_p": 0.95,
+        "role": "manager"
+      }
+    },
+    {
+      "id": "behavior_analyst",
+      "type": "Agent",
+      "label": "Behavior Pattern Analyst",
+      "nodeCategory": "agent",
+      "agent_id": "698834aab662c978044a1587",
+      "config": {
+        "name": "Behavior Pattern Analyst",
+        "provider": "Anthropic",
+        "model": "claude-sonnet-4-5",
+        "temperature": 0.3,
+        "top_p": 1,
+        "role": "sub-agent"
+      }
+    },
+    {
+      "id": "plan_optimizer",
+      "type": "Agent",
+      "label": "Plan Optimizer Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698834c6c2c45b8de2aa04ea",
+      "config": {
+        "name": "Plan Optimizer Agent",
+        "provider": "OpenAI",
+        "model": "gpt-4.1",
+        "temperature": 0.4,
+        "top_p": 1,
+        "role": "sub-agent"
+      }
+    },
+    {
+      "id": "insight_generator",
+      "type": "Agent",
+      "label": "Insight Generator Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698834e2f92870f1ee0acc69",
+      "config": {
+        "name": "Insight Generator Agent",
+        "provider": "Google",
+        "model": "gemini-2.5-pro",
+        "temperature": 0.5,
+        "top_p": 0.95,
+        "role": "sub-agent"
+      }
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Coaching Response",
+      "nodeCategory": "end"
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "life_coach_manager"
+    },
+    {
+      "source": "life_coach_manager",
+      "target": "behavior_analyst"
+    },
+    {
+      "source": "life_coach_manager",
+      "target": "plan_optimizer"
+    },
+    {
+      "source": "life_coach_manager",
+      "target": "insight_generator"
+    },
+    {
+      "source": "behavior_analyst",
+      "target": "output_node"
+    },
+    {
+      "source": "plan_optimizer",
+      "target": "output_node"
+    },
+    {
+      "source": "insight_generator",
+      "target": "output_node"
+    }
+  ]
+}

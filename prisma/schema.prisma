@@ -1,0 +1,46 @@
+// Prisma schema for LifeFlow
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Goal {
+  id           String       @id @default(cuid())
+  title        String
+  category     Category
+  frequency    Frequency
+  targetValue  Float
+  currentValue Float        @default(0)
+  startDate    DateTime     @default(now())
+  endDate      DateTime?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  checkIns     CheckIn[]
+}
+
+model CheckIn {
+  id          String   @id @default(cuid())
+  goalId      String
+  goal        Goal     @relation(fields: [goalId], references: [id], onDelete: Cascade)
+  completedAt DateTime @default(now())
+  value       Float
+  notes       String?
+}
+
+enum Category {
+  HABITS
+  FINANCES
+  CAREER
+  PERSONAL
+}
+
+enum Frequency {
+  daily
+  weekly
+  monthly
+}

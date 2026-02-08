@@ -1,0 +1,82 @@
+{
+  "agent_name": "Life Coach Manager",
+  "agent_id": "69883505f92870f1ee0acc6b",
+  "agent_purpose": "Coordinates sub-agents to deliver personalized, supportive, shame-free guidance for students managing goals across habits, finances, career, and personal development",
+  "description": "Manager agent that coordinates Behavior Pattern Analyst, Plan Optimizer, and Insight Generator to provide cohesive coaching",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "coaching_message": "string",
+      "behavior_insights": "string",
+      "plan_recommendations": "string",
+      "motivational_insights": "string",
+      "action_items": [
+        "string"
+      ],
+      "encouragement": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string",
+      "sub_agents_consulted": [
+        "string"
+      ]
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "coaching_message": "It's completely natural to encounter bumps in the road with new habits, especially ones like morning exercise that rely on energy and routine. The fact that you've noticed this pattern and are willing to adjust shows real commitment to your goals. Rather than seeing yourself as 'behind,' this is a valuable signal that your routine might need a tweak to better fit your life\u2014not that you lack motivation or ability.",
+      "behavior_insights": "Analysis shows you've been struggling with morning exercise due to possible misalignment with your natural energy, other morning obligations, or ambitious expectations. There's no sign of burnout, just a small motivational dip. It's important to remember that missing sessions is data that can help you optimize your plan\u2014you're not letting yourself down, you're gaining self-awareness.",
+      "plan_recommendations": "Try shifting your goal from every morning to 3-4 sessions per week and allow flexible timing (mornings or afternoons, as your schedule and energy allow). Consider making your workouts shorter (10-15 minutes) to begin with, and extend your timeline for major fitness milestones. These adjustments make achievements more sustainable and less stressful.",
+      "motivational_insights": "Recognizing a need to refocus is progress in itself! Each small action\u2014like a short walk or stretch\u2014moves you forward. Visual tools like a progress tracker or a habit calendar can help you appreciate how even tiny steps add up. Remember, fitness is a journey; even setbacks are part of the path.",
+      "action_items": [
+        "Test exercising at different times (afternoon or evening) to find when you feel most energized.",
+        "Reduce your frequency goal to 3-4 times a week, with flexible timing.",
+        "Keep sessions short to build momentum\u2014think 10-15 minutes at first.",
+        "Consider tracking your activity visually with a simple calendar or app.",
+        "Reflect on how small wins make you feel, and celebrate them, no matter how minor!"
+      ],
+      "encouragement": "You're not behind\u2014you're learning what works best for you! Every day is a chance to begin again. Celebrate your willingness to adapt and remember: progress, not perfection, wins the race. You've already taken a big step by reaching out for support. You've got this!"
+    },
+    "metadata": {
+      "agent_name": "Life Coach Manager",
+      "timestamp": "2024-06-12T15:35:00Z",
+      "sub_agents_consulted": [
+        "Behavior Pattern Analyst",
+        "Plan Optimizer Agent",
+        "Insight Generator Agent"
+      ]
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-08T07:04:47.046434",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "coaching_message": "It's completely natural to encounter bumps in the road with new habits, especially ones like morning exercise that rely on energy and routine. The fact that you've noticed this pattern and are willing to adjust shows real commitment to your goals. Rather than seeing yourself as 'behind,' this is a valuable signal that your routine might need a tweak to better fit your life\u2014not that you lack motivation or ability.",
+      "behavior_insights": "Analysis shows you've been struggling with morning exercise due to possible misalignment with your natural energy, other morning obligations, or ambitious expectations. There's no sign of burnout, just a small motivational dip. It's important to remember that missing sessions is data that can help you optimize your plan\u2014you're not letting yourself down, you're gaining self-awareness.",
+      "plan_recommendations": "Try shifting your goal from every morning to 3-4 sessions per week and allow flexible timing (mornings or afternoons, as your schedule and energy allow). Consider making your workouts shorter (10-15 minutes) to begin with, and extend your timeline for major fitness milestones. These adjustments make achievements more sustainable and less stressful.",
+      "motivational_insights": "Recognizing a need to refocus is progress in itself! Each small action\u2014like a short walk or stretch\u2014moves you forward. Visual tools like a progress tracker or a habit calendar can help you appreciate how even tiny steps add up. Remember, fitness is a journey; even setbacks are part of the path.",
+      "action_items": [
+        "Test exercising at different times (afternoon or evening) to find when you feel most energized.",
+        "Reduce your frequency goal to 3-4 times a week, with flexible timing.",
+        "Keep sessions short to build momentum\u2014think 10-15 minutes at first.",
+        "Consider tracking your activity visually with a simple calendar or app.",
+        "Reflect on how small wins make you feel, and celebrate them, no matter how minor!"
+      ],
+      "encouragement": "You're not behind\u2014you're learning what works best for you! Every day is a chance to begin again. Celebrate your willingness to adapt and remember: progress, not perfection, wins the race. You've already taken a big step by reaching out for support. You've got this!"
+    },
+    "metadata": {
+      "agent_name": "Life Coach Manager",
+      "timestamp": "2024-06-12T15:35:00Z",
+      "sub_agents_consulted": [
+        "Behavior Pattern Analyst",
+        "Plan Optimizer Agent",
+        "Insight Generator Agent"
+      ]
+    }
+  },
+  "test_passed": true
+}

@@ -1,0 +1,132 @@
+{
+  "workflow_name": "LifeFlow Adaptive Goal Planning Companion",
+  "created_at": "2026-02-08T00:00:00Z",
+  "agents": {
+    "life_coach_manager": {
+      "agent_id": "69883505f92870f1ee0acc6b",
+      "name": "Life Coach Manager",
+      "type": "manager",
+      "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "managed_agents": [
+        "698834aab662c978044a1587",
+        "698834c6c2c45b8de2aa04ea",
+        "698834e2f92870f1ee0acc69"
+      ]
+    },
+    "behavior_analyst": {
+      "agent_id": "698834aab662c978044a1587",
+      "name": "Behavior Pattern Analyst",
+      "type": "sub-agent",
+      "status": "active",
+      "provider": "Anthropic",
+      "model": "claude-sonnet-4-5"
+    },
+    "plan_optimizer": {
+      "agent_id": "698834c6c2c45b8de2aa04ea",
+      "name": "Plan Optimizer Agent",
+      "type": "sub-agent",
+      "status": "active",
+      "provider": "OpenAI",
+      "model": "gpt-4.1"
+    },
+    "insight_generator": {
+      "agent_id": "698834e2f92870f1ee0acc69",
+      "name": "Insight Generator Agent",
+      "type": "sub-agent",
+      "status": "active",
+      "provider": "Google",
+      "model": "gemini-2.5-pro"
+    }
+  },
+  "workflow_structure": {
+    "entry_point": "life_coach_manager",
+    "nodes": [
+      {
+        "id": "input_node",
+        "type": "Input",
+        "label": "User Query",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "life_coach_manager",
+        "type": "Agent",
+        "label": "Life Coach Manager",
+        "nodeCategory": "agent"
+      },
+      {
+        "id": "behavior_analyst",
+        "type": "Agent",
+        "label": "Behavior Pattern Analyst",
+        "nodeCategory": "agent"
+      },
+      {
+        "id": "plan_optimizer",
+        "type": "Agent",
+        "label": "Plan Optimizer Agent",
+        "nodeCategory": "agent"
+      },
+      {
+        "id": "insight_generator",
+        "type": "Agent",
+        "label": "Insight Generator Agent",
+        "nodeCategory": "agent"
+      },
+      {
+        "id": "output_node",
+        "type": "Output",
+        "label": "Coaching Response",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      {
+        "source": "input_node",
+        "target": "life_coach_manager"
+      },
+      {
+        "source": "life_coach_manager",
+        "target": "behavior_analyst"
+      },
+      {
+        "source": "life_coach_manager",
+        "target": "plan_optimizer"
+      },
+      {
+        "source": "life_coach_manager",
+        "target": "insight_generator"
+      },
+      {
+        "source": "behavior_analyst",
+        "target": "output_node"
+      },
+      {
+        "source": "plan_optimizer",
+        "target": "output_node"
+      },
+      {
+        "source": "insight_generator",
+        "target": "output_node"
+      }
+    ]
+  },
+  "response_schemas": [
+    {
+      "agent_name": "Behavior Pattern Analyst",
+      "schema_file": "/app/nextjs-project/response_schemas/behavior_pattern_analyst_response.json"
+    },
+    {
+      "agent_name": "Plan Optimizer Agent",
+      "schema_file": "/app/nextjs-project/response_schemas/plan_optimizer_agent_response.json"
+    },
+    {
+      "agent_name": "Insight Generator Agent",
+      "schema_file": "/app/nextjs-project/response_schemas/insight_generator_agent_response.json"
+    },
+    {
+      "agent_name": "Life Coach Manager",
+      "schema_file": "/app/nextjs-project/response_schemas/life_coach_manager_response.json"
+    }
+  ]
+}

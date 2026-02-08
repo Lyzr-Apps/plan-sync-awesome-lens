@@ -1,0 +1,37 @@
+{
+  "agent_name": "Plan Optimizer Agent",
+  "agent_id": "698834c6c2c45b8de2aa04ea",
+  "test_message": "My original goal was to save $200/month but I've only managed $80-100. I also wanted to work out 6 days a week but can only do 3-4.",
+  "expected_purpose": "assistant",
+  "timestamp": "2026-02-08T07:05:22.374180",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "optimization_summary": "Adjusted savings and workout targets to align with recent outcomes, promoting consistency and sustainable progress.",
+      "goal_adjustments": [
+        {
+          "goal_name": "Save $200 per month",
+          "current_timeline": "Monthly savings target of $200",
+          "suggested_timeline": "Monthly savings target of $100",
+          "rationale": "Recently, you've consistently managed to save $80-100 per month. Rebalancing to $100/month enhances achievability and builds positive momentum, with the option to increase your goal as circumstances allow."
+        },
+        {
+          "goal_name": "Workout 6 days a week",
+          "current_timeline": "6 workouts per week",
+          "suggested_timeline": "3-4 workouts per week",
+          "rationale": "Your current pattern of 3-4 workouts per week is sustainable given your situation. Shifting to this as your main target will help maintain consistency and prevent burnout, while still supporting your fitness goals."
+        }
+      ],
+      "load_assessment": "Your current goals were placing a high demand on your routine. The realistic progress you've shown suggests a more balanced approach is needed to prevent overwhelm.",
+      "recommended_pace": "moderate",
+      "supportive_message": "You're already making meaningful progress! Adjusting your goals shows your adaptability and commitment. With these updates, you'll experience steady improvement without unnecessary pressure\u2014celebrate these positive changes!"
+    },
+    "metadata": {
+      "agent_name": "Plan Optimizer Agent",
+      "timestamp": "2024-06-12T16:46:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"optimization_summary\": \"Adjusted savings and workout targets to align with recent outcomes, promoting consistency and sustainable progress.\",\n    \"goal_adjustments\": [\n      {\n        \"goal_name\": \"Save $200 per month\",\n        \"current_timeline\": \"Monthly savings target of $200\",\n        \"suggested_timeline\": \"Monthly savings target of $100\",\n        \"rationale\": \"Recently, you've consistently managed to save $80-100 per month. Rebalancing to $100/month enhances achievability and builds positive momentum, with the option to increase your goal as circumstances allow.\"\n      },\n      {\n        \"goal_name\": \"Workout 6 days a week\",\n        \"current_timeline\": \"6 workouts per week\",\n        \"suggested_timeline\": \"3-4 workouts per week\",\n        \"rationale\": \"Your current pattern of 3-4 workouts per week is sustainable given your situation. Shifting to this as your main target will help maintain consistency and prevent burnout, while still supporting your fitness goals.\"\n      }\n    ],\n    \"load_assessment\": \"Your current goals were placing a high demand on your routine. The realistic progress you've shown suggests a more balanced approach is needed to prevent overwhelm.\",\n    \"recommended_pace\": \"moderate\",\n    \"supportive_message\": \"You're already making meaningful progress! Adjusting your goals shows your adaptability and commitment. With these updates, you'll experience steady improvement without unnecessary pressure\u2014celebrate these positive changes!\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Plan Optimizer Agent\",\n    \"timestamp\": \"2024-06-12T16:46:00Z\"\n  }\n}"
+}
